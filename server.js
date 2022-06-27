@@ -44,6 +44,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//LOGGED IN USER IS NOW IN USER VARIABLE
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
 //ROUTES
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
