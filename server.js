@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const passport = require('passport')
 
 
 // It's very important to require dotenv before any other module
@@ -12,6 +13,8 @@ require('dotenv').config();
 // config/database depends upon process.env.DATABASE_URL
 // connect to the database with Mongoose
 require('./config/database');
+
+require('./config/passport');
 
 
 var indexRouter = require('./routes/index');
@@ -23,6 +26,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//MIDDLEWARE PIPELINE
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -36,6 +40,11 @@ app.use(session({
   saveUninitialized: true
 }));
 
+//INVOKE SESSION AND INTIALIZE
+app.use(passport.initialize());
+app.use(passport.session());
+
+//ROUTES
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
