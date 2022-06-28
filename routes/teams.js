@@ -4,6 +4,7 @@ var teamsCtrl = require('../controllers/teams');
 
 router.get('/', teamsCtrl.index);
 router.get('/new', teamsCtrl.new);
+router.get('/:id', teamsCtrl.show);
 router.post('/', teamsCtrl.create);
 
 module.exports = router;

@@ -1,9 +1,11 @@
 var Team = require('../models/team');
+const Driver = require('../models/driver');
 
 module.exports = {
     index,
     new: newTeam,
     create,
+    show,
 };
 
 function index(req, res){ 
@@ -27,4 +29,12 @@ function create(req, res) {
     // for now, redirect right back to new.ejs
     res.redirect(`/teams`);
   });
+}
+
+function show(req, res) {
+  Team.findById(req.params.id, function(err, team) {
+      Driver.find({team: team._id}, function(err, drivers) {
+          res.render('teams/show', {team, drivers})
+      })
+  })
 }
