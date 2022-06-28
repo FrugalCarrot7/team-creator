@@ -6,6 +6,10 @@ const driverSchema = new Schema({
     driverName: {
         type: String,
         required: true
+    },
+    age: {
+        type: Number,
+        min: 0
     }
 }, 
 {

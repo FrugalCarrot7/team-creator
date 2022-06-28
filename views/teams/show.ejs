@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
 
     <a href="/">home</a>
+
+    <a href="/teams/<%= team._id %>/drivers/new"><button>Add Driver</button></a>
     
 <div>
     <table>
@@ -11,7 +13,27 @@
         </tr>
         </thead>
     </table>
-</div>        
+</div> 
+<div>
+    <table>
+        <thead>
+            <th>
+                Driver
+            </th>
+            <th>
+                Age
+            </th>
+            
+        </thead>
+        <% drivers.forEach(function(driver) { %>
+            <tr>
+                <td><%= driver.driverName %></td>
+                <td><%= driver.age %></td>
+              
+            </tr>
+        <% }) %>
+      </table>
+</div>       
 
 
 <%- include('../partials/footer') %>

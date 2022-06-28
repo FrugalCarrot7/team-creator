@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<h1>Enter Ticket information</h1>
+    <form id="add-ticket-form" action="/teams/<%= teamId %>/drivers" method="POST">
+        <label>Driver Name:</label>
+        <input type="text" name="driverName" >
+        <label>Driver Age:</label>
+        <input type="text" name="age">
+        <input type="submit" value="Add Driver">
+    </form>
+
+<%- include('../partials/footer') %>
