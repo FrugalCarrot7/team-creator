@@ -28,7 +28,7 @@ function create(req, res) {
     if (err) return res.redirect('/teams/new');
     console.log(team);
     // for now, redirect right back to new.ejs
-    res.redirect(`/teams`);
+    res.redirect(`/teams/${team._id}`);
   });
 }
 
