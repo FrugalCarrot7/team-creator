@@ -12,6 +12,7 @@ function index(req, res){
     console.log(req.user)
     Team.find({}, function(err, teams) {
       res.render('teams/index', { title: 'All Teams', teams });
+      console.log(teams.length)
     });
 
 }
