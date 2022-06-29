@@ -2,7 +2,7 @@
 
     <a href="/">home</a>
 
-    <a href="/teams/<%= team._id %>/drivers/new"><button>Add Driver</button></a>
+    
     
 <div>
     <table>
@@ -14,7 +14,26 @@
         </thead>
     </table>
 </div> 
+<!-- start driver list -->
+<div>Team Drivers:</div>
+<ul>
+  <%- team.members.map(member => 
+    `<li>${member.driverName} <small>${member.age}</small></li>`
+  ).join('') %>
+</ul>
+<!-- end driver list -->
+<!-- add to team form below this comment -->
+<form id="add-driver-to-team" action="/teams/<%=team._id %>/drivers" method="POST">
+    <select name="driverId">
+      <%- drivers.map(driver => 
+        `<option value="${driver._id}">${driver.driverName}</option>`
+      ).join('') %>
+    </select>
+    <button type="submit">Add Driver to Team</button>
+</form>
+<!-- add to team form above this comment -->
 <div>
+    <h2>list of all drivers</h2>
     <table>
         <thead>
             <th>

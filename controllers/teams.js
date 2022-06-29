@@ -28,14 +28,19 @@ function create(req, res) {
     if (err) return res.redirect('/teams/new');
     console.log(team);
     // for now, redirect right back to new.ejs
+    console.log(team._id)
     res.redirect(`/teams/${team._id}`);
   });
 }
 
 function show(req, res) {
-  Team.findById(req.params.id, function(err, team) {
-      Driver.find({team: team._id}, function(err, drivers) {
-          res.render('teams/show', {team, drivers})
-      })
-  })
+  Team.findById(req.params.id)
+  .populate('members').exec(function(err, team) {
+      Driver.find(
+        {_id: {$nin: team.members}},
+        function(err, drivers) {
+          res.render('teams/show', {team, drivers});
+        }
+      )
+  });
 }

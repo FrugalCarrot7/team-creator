@@ -23,6 +23,9 @@ var usersRouter = require('./routes/users');
 var teamsRouter = require('./routes/teams');
 const driversRouter = require('./routes/drivers');
 
+// console.log('this is drivers router', driversRouter, 'end of drivers router')
+// console.log('this is teams router', teamsRouter, 'end of teams router')
+
 var app = express();
 
 // view engine setup

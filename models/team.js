@@ -12,7 +12,7 @@ const teamSchema = new Schema({
         enum: ['Merc W13', 'Red Bull RB18', 'Ferrari F1-75', 'McLaren MCL36', 'Alpine A522', 
         'AlphaTauri AT03', 'Aston Martin AMR22', 'Williams FW44', 'Alfa Romeo C42', 'Haas VF-22']
     },
-    operator: [{type: Schema.Types.ObjectId, ref: 'x'}],
+    members: [{type: Schema.Types.ObjectId, ref: 'Driver'}],
 }, 
 {
     timestamps: true 
