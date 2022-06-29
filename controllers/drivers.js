@@ -14,10 +14,8 @@ function newDriver(req, res) {
 }
 
 function create(req, res) {
-    const teamId = req.params.id
-    req.body.team = teamId
     Driver.create(req.body, function(err, driver) {
-      res.redirect(`/teams/${teamId}`)
+      res.redirect(`/teams`)
     })
 }
 
