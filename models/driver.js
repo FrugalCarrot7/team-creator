@@ -10,6 +10,10 @@ const driverSchema = new Schema({
     age: {
         type: Number,
         min: 0
+    },
+    country: {
+        type: String,
+        default: "United States"
     }
 }, 
 {
