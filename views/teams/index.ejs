@@ -20,7 +20,7 @@
               <td class="teamData"><%= team.teamName %></td>
               <td class="teamData"><%= team.teamCar %></td>
               <td class="teamData"><a href="/teams/<%= team._id %>">DRIVERS</a></td>
-            <% if(user) { %>
+              <% if (user && user._id.equals(team.user)) { %>
               <td>
                 <form action="/teams/<%= team.id %>?_method=DELETE"
                 class="delete-form" method="POST">
