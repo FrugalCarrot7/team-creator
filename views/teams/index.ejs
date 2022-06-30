@@ -5,9 +5,9 @@
           <tr>
 
             <th></th>
-            <th>PRINCIPAL</th>
-            <th>TEAM</th>
-            <th>CAR</th>
+            <th class="tableHeader">PRINCIPAL</th>
+            <th class="tableHeader">TEAM</th>
+            <th class="tableHeader">CAR</th>
 
           </tr>
         </thead>
@@ -15,11 +15,11 @@
           <% teams.forEach(function(team) { %>
             <tr>
 
-              <td class="team-user"><img alt="avatar" src="<%= team.userAvatar %>" referrerpolicy="no-referrer" ></td>
-              <td><%= team.userName %></td>
-              <td><%= team.teamName %></td>
-              <td><%= team.teamCar %></td>
-              <td><a href="/teams/<%= team._id %>">DRIVERS</a></td>
+              <td><img class="avatarImg" alt="avatar" src="<%= team.userAvatar %>" referrerpolicy="no-referrer" ></td>
+              <td class="teamData"><%= team.userName %></td>
+              <td class="teamData"><%= team.teamName %></td>
+              <td class="teamData"><%= team.teamCar %></td>
+              <td class="teamData"><a href="/teams/<%= team._id %>">DRIVERS</a></td>
             <% if(user) { %>
               <td>
                 <form action="/teams/<%= team.id %>?_method=DELETE"
