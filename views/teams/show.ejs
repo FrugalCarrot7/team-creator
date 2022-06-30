@@ -29,7 +29,8 @@
 </form>
 <!-- add to team form above this comment -->
 
+<% if (user && user._id.equals(team.user)) { %>
 <a href="/teams/<%= team._id %>/edit">Edit Team</a>
-
+<% } %>
 
 <%- include('../partials/footer') %>
