@@ -19,6 +19,12 @@
               <td><%= team.teamName %></td>
               <td><%= team.teamCar %></td>
               <td><a href="/teams/<%= team._id %>">DRIVERS</a></td>
+              <td>
+                <form action="/teams/<%= team.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">DELETE</button>
+                </form>
+              </td>
 
             </tr>
             <% }); %>

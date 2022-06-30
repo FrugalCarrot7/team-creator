@@ -32,27 +32,7 @@
     <button type="submit">Add Driver to Team</button>
 </form>
 <!-- add to team form above this comment -->
-<div>
-    <h2>list of all drivers</h2>
-    <table>
-        <thead>
-            <th>
-                Driver
-            </th>
-            <th>
-                Age
-            </th>
-            
-        </thead>
-        <% drivers.forEach(function(driver) { %>
-            <tr>
-                <td><%= driver.driverName %></td>
-                <td><%= driver.age %></td>
-              
-            </tr>
-        <% }) %>
-      </table>
-</div>       
+      
 
 
 <%- include('../partials/footer') %>
