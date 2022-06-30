@@ -25,6 +25,10 @@ function newTeam(req, res){
 }
 
 function create(req, res) {
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
+  req.body.userAvatar = req.user.avatar;
+  console.log('this is req.body create', req.body)
   var team = new Team(req.body);
   team.save(function(err) {
     // one way to handle errors

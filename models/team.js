@@ -13,8 +13,11 @@ const teamSchema = new Schema({
         'AlphaTauri AT03', 'Aston Martin AMR22', 'Williams FW44', 'Alfa Romeo C42', 'Haas VF-22']
     },
     members: [{type: Schema.Types.ObjectId, ref: 'Driver'}],
-}, 
-{
+    //user info 
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    userName: String,
+    userAvatar: String,
+}, {
     timestamps: true 
 })
 
