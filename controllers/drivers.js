@@ -9,11 +9,13 @@ module.exports = {
 };
 
 function newDriver(req, res) {
-    console.log('hit NEWDRIVER')
     res.render('drivers/new', {teamId: req.params.id})
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     Driver.create(req.body, function(err, driver) {
       res.redirect(`/teams`)
     })
@@ -21,7 +23,6 @@ function create(req, res) {
 
 function addToTeam(req, res) {
     Team.findById(req.params.id, function(err, team) {
-        console.log('this is req.body add to team', req.body)
         team.members.push(req.body.driverId)
         team.save(function(err){
             res.redirect(`/teams/${team._id}`)

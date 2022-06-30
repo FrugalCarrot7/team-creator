@@ -14,7 +14,11 @@ const driverSchema = new Schema({
     country: {
         type: String,
         default: "United States"
-    }
+    },
+    //user info 
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    userName: String,
+    userAvatar: String,
 }, 
 {
     timestamps: true 
