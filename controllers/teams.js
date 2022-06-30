@@ -44,7 +44,7 @@ function show(req, res) {
   Team.findById(req.params.id)
   .populate('members').exec(function(err, team) {
       Driver.find(
-        {_id: {$nin: team.members}},
+        {_id: {$nin: team.members}, user: req.user._id},
         function(err, drivers) {
           res.render('teams/show', {team, drivers});
         }
