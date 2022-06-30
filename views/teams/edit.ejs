@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <h1>Edit Team</h1>
 
 <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
@@ -19,3 +20,5 @@
     </select>
     <input type="submit" value="ADD TEAM">
 </form>
+
+<%- include('../partials/footer') %>
