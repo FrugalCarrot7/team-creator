@@ -3,7 +3,7 @@
 ### WHAT IS MY PURPOSE: Create a team and your drivers. Organize your drivers and assign them.
 
 ### ERD: 
-![ERD](https://imgur.com/oIgLxMP.png)
+![ERD](https://imgur.com/am44afq.png)
 
 ### TRELLO BOARD: https://trello.com/b/lRKyx5ii/project
 ![Trello Board](https://imgur.com/N7Xj7du.png)
