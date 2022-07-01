@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <table id="list">
+    <table>
         <thead>
           <tr>
 
@@ -19,12 +19,12 @@
               <td class="teamData"><%= team.userName %></td>
               <td class="teamData"><%= team.teamName %></td>
               <td class="teamData"><%= team.teamCar %></td>
-              <td class="teamData"><a href="/teams/<%= team._id %>">DRIVERS</a></td>
+              <td class="driverData"><a id="driversLink" href="/teams/<%= team._id %>">DRIVERS</a></td>
               <% if (user && user._id.equals(team.user)) { %>
               <td>
                 <form action="/teams/<%= team.id %>?_method=DELETE"
                 class="delete-form" method="POST">
-                <button type="submit">DELETE</button>
+                <button id="buttonDelete" type="submit">DELETE TEAM</button>
                 </form>
               </td>
               <% } %>
@@ -32,5 +32,7 @@
             <% }); %>
         </tbody>
     </table>
+
+  
 
 <%- include('../partials/footer') %>

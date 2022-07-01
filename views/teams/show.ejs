@@ -5,32 +5,44 @@
         <thead>
         <tr>
             <th>TEAM NAME:</th>
-            <td><%= team.teamName %></td>
+            <td class="teamName"><%= team.teamName %></td>
         </tr>
         </thead>
     </table>
 </div> 
 <!-- start driver list -->
-<div>Team Drivers:</div>
-<ul>
-  <%- team.members.map(member => 
-    `<li>${member.driverName} <small>${member.age}</small>${member.country}</li>`
-  ).join('') %>
-</ul>
+<h3>Team Drivers:</h3>
+    <table>
+        <thead>
+            <tr>
+              <th class="teamData">DRIVER</th>
+              <th class="teamData">AGE</th>
+              <th class="teamData">NATIONALITY</th>
+            </tr>
+        </thead>
+<% team.members.forEach(function(member) { %>
+        <tr>
+            <td class="teamData"><%= member.driverName %></td>
+            <td class="teamData"><%= member.age %></td>
+            <td class="teamData"><%= member.country %></td>
+        </tr>
+<% }); %>
+    </table>
+
 <!-- end driver list -->
+<h3>AVAILABLE DRIVERS</h3>
 <div>
 <table>
-    <caption>AVAILABLE DRIVERS</caption>
     <thead>
           <tr>
-            <th class="tableHeader">DRIVER</th>
-            <th class="tableHeader">AGE</th>
-            <th class="tableHeader">NATIONALITY</th>
+            <th class="teamData">DRIVER</th>
+            <th class="teamData">AGE</th>
+            <th class="teamData">NATIONALITY</th>
           </tr>
     </thead>
 <tbody>
     <% drivers.forEach(function(availableDriver) { %>
-        <tr>
+        <tr class="tableHeader">
             <td class="teamData"><%= availableDriver.driverName %></td>
             <td class="teamData"><%= availableDriver.age %></td>
             <td class="teamData"><%= availableDriver.country %></td>

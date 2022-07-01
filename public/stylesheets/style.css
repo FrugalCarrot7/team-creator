@@ -1,7 +1,16 @@
 body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #3c3434;
+  background-color: rgba(0, 0, 0, 0.9);
+  
+
+}
+
+header {
+  width: 100%;
 }
 
 a {
@@ -26,7 +35,7 @@ header {
 
 /* top navigation */
 .topnav {
-  background-color: #333;
+  background-color: rgb(132, 42, 42);
   overflow: hidden;
 }
 
@@ -40,8 +49,8 @@ header {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .topnav a.active {
@@ -51,27 +60,87 @@ header {
 
 /* top navigation */
 
-h1 {
-  font-family: 'Alfa Slab One', cursive;
-  margin:auto;
-  padding: 5px;
-}
-
 .tableHeader {
-  border: 2px solid black;
+  border: 2px solid rgb(175, 36, 36);
   text-align: center;
 }
 
 .teamData {
-  border: 2px solid black;
+  border: 2px solid rgb(175, 36, 36);
   color: beige;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0 10 0 10;
 }
 
 .driverData {
-  border: 2px solid black;
+  border: 2px solid rgb(175, 36, 36);
   color: beige;
 }
 
 .avatarImg {
   border-radius: 45px;
+}
+
+table {
+  font-family: Verdana, sans-serif;
+  margin-top: 40px;
+}
+
+th {
+  font-size: 30px;
+  color: beige;
+  padding: 15px;
+}
+ .teamName {
+   color: beige;
+   font-size: 40px;
+ }
+ h1 {
+  font-family: 'Alfa Slab One', cursive;
+  margin:auto;
+  padding: 5px;
+  width: 100%;
+}
+
+h2 {
+  color: beige;
+}
+
+ h3 {
+  color: beige;
+ }
+
+ #buttonDelete {
+  color: beige;
+  background-color: rgb(175, 36, 36);
+  padding: 10px 5px 10px 5px;
+  border-radius: 25px;
+ }
+
+ #driversLink {
+   color: red;
+ }
+
+ #driversLink:hover {
+  color: beige;
+}
+
+label {
+  font-size: 25px;
+  color: beige;
+}
+input {
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: beige;
+  border: 1px solid red;
+}
+select {
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: beige;
+  border: 1px solid red;
 }
