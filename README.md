@@ -1,6 +1,7 @@
 # Team-Creator
 
 ### WHAT IS MY PURPOSE: Create a team and your drivers. Organize your drivers and assign them.
+![App Home Page](https://imgur.com/9fQPsaq.png)
 
 ### ERD: 
 ![ERD](https://imgur.com/am44afq.png)
