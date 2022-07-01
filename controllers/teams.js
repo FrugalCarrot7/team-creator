@@ -31,10 +31,8 @@ function create(req, res) {
   console.log('this is req.body create', req.body)
   var team = new Team(req.body);
   team.save(function(err) {
-    // one way to handle errors
     if (err) return res.redirect('/teams/new');
     console.log(team);
-    // for now, redirect right back to new.ejs
     console.log(team._id)
     res.redirect(`/teams/${team._id}`);
   });
