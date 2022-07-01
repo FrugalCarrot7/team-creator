@@ -4,14 +4,13 @@
     <table>
         <thead>
         <tr>
-            <th>TEAM NAME:</th>
             <td class="teamName"><%= team.teamName %></td>
         </tr>
         </thead>
     </table>
 </div> 
 <!-- start driver list -->
-<h3>Team Drivers:</h3>
+<h3>TEAM DRIVERS</h3>
     <table>
         <thead>
             <tr>
@@ -28,7 +27,7 @@
         </tr>
 <% }); %>
     </table>
-
+<% if (user && user._id.equals(team.user)) { %>
 <!-- end driver list -->
 <h3>AVAILABLE DRIVERS</h3>
 <div>
@@ -51,19 +50,20 @@
 </tbody>
 </table>
 </div>
+<p>*IF THERE ARE NO AVAILABLE DRIVERS YOU MUST <strong>CREATE</strong> A DRIVER</p>
 <!-- add to team form below this comment -->
-<form id="add-driver-to-team" action="/teams/<%=team._id %>/drivers" method="POST">
+<form id="addDriverToTeam" action="/teams/<%=team._id %>/drivers" method="POST">
     <select name="driverId">
       <%- drivers.map(driver => 
         `<option value="${driver._id}">${driver.driverName}</option>`
       ).join('') %>
     </select>
-    <button type="submit">Add Driver to Team</button>
+    <button class="addButton" type="submit">Add Driver to Team</button>
 </form>
 <!-- add to team form above this comment -->
 
-<% if (user && user._id.equals(team.user)) { %>
-<a href="/teams/<%= team._id %>/edit">Edit Team</a>
+
+<a id="editLink" href="/teams/<%= team._id %>/edit">EDIT TEAM</a>
 <% } %>
 
 <%- include('../partials/footer') %>
