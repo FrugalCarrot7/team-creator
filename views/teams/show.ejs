@@ -18,6 +18,27 @@
   ).join('') %>
 </ul>
 <!-- end driver list -->
+<div>
+<table>
+    <caption>AVAILABLE DRIVERS</caption>
+    <thead>
+          <tr>
+            <th class="tableHeader">DRIVER</th>
+            <th class="tableHeader">AGE</th>
+            <th class="tableHeader">NATIONALITY</th>
+          </tr>
+    </thead>
+<tbody>
+    <% drivers.forEach(function(availableDriver) { %>
+        <tr>
+            <td class="teamData"><%= availableDriver.driverName %></td>
+            <td class="teamData"><%= availableDriver.age %></td>
+            <td class="teamData"><%= availableDriver.country %></td>
+        </tr>
+    <% }); %>
+</tbody>
+</table>
+</div>
 <!-- add to team form below this comment -->
 <form id="add-driver-to-team" action="/teams/<%=team._id %>/drivers" method="POST">
     <select name="driverId">
